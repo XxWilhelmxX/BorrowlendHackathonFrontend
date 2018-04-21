@@ -12,13 +12,18 @@ import Login from './Login';
 import Register from './Register';
 
 class App extends Component {
-    isLogged = true;
+    constructor() {
+        super();
+        this.state = {
+            isLogged: true
+        }
+    }
 
     render() {
         return (
             <Router>
                 {
-                this.isLogged ? <div className="container">
+                this.state.isLogged ? <div className="container">
                     <TopBar />
                     <div className="main">
                         <Sidebar />
@@ -28,6 +33,7 @@ class App extends Component {
                 </div> :
                 <Switch>
                     <Route path='/login' component={Login}/>
+                    <Route path='/register' component={Register}/>
                     <Redirect from='/' to="/login" />
                 </Switch>
                 }
