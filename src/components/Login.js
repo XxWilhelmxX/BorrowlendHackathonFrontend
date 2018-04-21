@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../index.css';
+import Cookies from 'js-cookie'
 
-const API ='http://c9b1a451.ngrok.io/server/user/login';
+const API ='http://c9b1a451.ngrok.io/server/user/signin';
 
 export default class Login extends React.Component {
   login() {
@@ -25,13 +26,13 @@ export default class Login extends React.Component {
    )
          .then(response => {
            response.json().then(data => {
-             if(data.login.length>0){
-               alert('LOGIN OK');
-
-               //
+             /*if(data.login.length>0){
+              alert('LOGIN OK');
+              Cookies.set('logged', data.id);
              }else{
                alert('Check your login and password and try again!');
-             }
+             }*/
+            console.log(data);
            });
          });
 
