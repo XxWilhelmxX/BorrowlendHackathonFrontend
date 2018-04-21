@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../index.css';
 
-export class Login extends React.Component {
+export default class Login extends React.Component {
   login() {
     let login = document.querySelectorAll('input[name="login"]')[0].value;
     let password = document.querySelectorAll('input[name="password"]')[0].value;

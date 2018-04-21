@@ -6,4 +6,4 @@ import App from './components/App';
 import {Login} from './components/Login.js';
 import {Register} from './components/Register.js';
 
-ReactDOM.render(<Login/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));

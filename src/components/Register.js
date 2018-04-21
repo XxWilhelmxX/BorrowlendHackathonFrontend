@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../index.css';
 
-export class Register extends React.Component {
+export default class Register extends React.Component {
   register() {
     let name = document.querySelectorAll('input[name="name"]')[0].value;
     let surname = document.querySelectorAll('input[name="surname"]')[0].value;

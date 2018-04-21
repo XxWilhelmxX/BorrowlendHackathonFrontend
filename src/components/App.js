@@ -6,6 +6,8 @@ import {
 import TopBar from './TopBar';
 import Sidebar from './sidebar';
 import Home from './home';
+import Login from './Login';
+import Register from './Register';
 
 class App extends Component {
     render() {
@@ -16,6 +18,8 @@ class App extends Component {
                     <Sidebar />
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={TopBar} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/register" component={Register} />
                 </div>
             </Router>
         );
