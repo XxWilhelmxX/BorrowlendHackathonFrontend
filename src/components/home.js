@@ -1,4 +1,5 @@
 import React from 'react';
+import './home.css';
 
 const API ='http://c9b1a451.ngrok.io/server/user/basic';
 const QUERY = '1';
@@ -41,8 +42,12 @@ export default class Home extends React.Component{
         if(this.state.isReady === 0){
             return <div>loading...</div>;
         }else{
-            return <div>You owe: {this.state.data.debt} in total<br/>
-            Your friends owe you: {this.state.data.deficit} in total</div>;
+            return (
+                <div className="home">
+                    <div className="minus"><span>You owe in total:</span> {this.state.data.debt}</div>
+                    <div className="plus"><span>Your friends owe you in total:</span> {this.state.data.deficit}</div>
+                </div>
+            );
         }
     }
 }

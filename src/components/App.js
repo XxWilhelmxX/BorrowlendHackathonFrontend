@@ -11,6 +11,7 @@ import Home from './home';
 import Login from './Login';
 import Register from './Register';
 import Cookies from 'js-cookie'
+import Borrow from './borrow'
 
 class App extends Component {
     constructor() {
@@ -31,6 +32,7 @@ class App extends Component {
                         <Sidebar />
                         <Route exact path="/" component={Home} />
                         <Route path="/register" component={Register} />
+                        <Route path="/borrow" component={Borrow} />
                     </div>
                 </div> :
                 <Switch>

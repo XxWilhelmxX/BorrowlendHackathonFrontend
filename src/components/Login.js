@@ -26,12 +26,12 @@ export default class Login extends React.Component {
    )
          .then(response => {
            response.json().then(data => {
-             /*if(data.login.length>0){
-              alert('LOGIN OK');
+             if(data.login.length>0){
               Cookies.set('logged', data.id);
+              window.location.href = "/";
              }else{
                alert('Check your login and password and try again!');
-             }*/
+             }
             console.log(data);
            });
          });
