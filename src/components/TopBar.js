@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import './TopBar.css';
+import Cookies from 'js-cookie';
+import {Link} from 'react-router-dom';
 
 class Profile extends Component {
-    render() {
+  logout() {
+    console.log('Removing');
+    Cookies.remove('logged', { path: '/' });
+  }
+
+  render() {
         return (
           <div className="Profile">
             <div className="profile-picture" />
@@ -10,8 +17,7 @@ class Profile extends Component {
             <h2>Jeff Bridges</h2>
 
             <nav>
-              <a href="">Settings</a>
-              <a href="">Logout</a>
+              <Link to="/" onClick={this.logout}>Logout</Link>
             </nav>
           </div>
         );
