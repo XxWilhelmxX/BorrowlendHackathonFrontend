@@ -4,11 +4,6 @@ import Cookies from 'js-cookie';
 import {Link} from 'react-router-dom';
 
 class Profile extends Component {
-  logout() {
-    console.log('Removing');
-    Cookies.remove('logged', { path: '/' });
-  }
-
   render() {
         return (
           <div className="Profile">
