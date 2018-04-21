@@ -40,7 +40,7 @@ export default class Sidebar extends React.Component{
 
     render() {
         return (
-          <ul>
+          <ul className='sideList'>
             {this.state.toDisplay.map((listValue) => {
               return <li onClick={() => this.updateView(listValue.command)}>{listValue.displayText}</li>;
             })}
