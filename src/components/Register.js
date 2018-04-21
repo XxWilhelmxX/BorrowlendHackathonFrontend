@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../index.css';
 
+const API ='http://c9b1a451.ngrok.io/server/user/register';
+
 export default class Register extends React.Component {
   register() {
     let name = document.querySelectorAll('input[name="name"]')[0].value;
@@ -19,7 +21,17 @@ export default class Register extends React.Component {
         PASSWORD: ${password},
         RP_PASSWORD: ${repeat_password},
         EMAIL: ${email}`);
-      //send request to check if user exists
+
+     let header = new Headers({
+          'Access-Control-Allow-Origin':'*',
+          'Content-Type': 'multipart/form-data'
+      });
+
+        fetch(API + `?login=${login}&&password=${password}&&email=${email}&&name=${name}&&surname=${surname}`, {method: 'POST', header: header})
+            .then(response => {
+              console.log(response)
+            });
+
     }else{
       alert('Please fill all fields!');
     }
@@ -56,7 +68,7 @@ export default class Register extends React.Component {
           </li>
           <li className="form-row">
             <label for="email">Email:</label>
-            <input type="text" name="login"/>
+            <input type="text" name="email"/>
           </li>
           <li className="form-row">
             <input type="button" value="Register" name="buttonRegister" onClick={this.register}/>
