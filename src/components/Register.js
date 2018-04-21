@@ -15,12 +15,6 @@ export default class Register extends React.Component {
 
     if(name.length > 0 && surname.length > 0 && login.length > 0
       && password.length > 0 && repeat_password.length > 0 && email.length > 0){
-        /*alert(`NAME: ${name},
-        SURNAME: ${surname},
-        LOGIN: ${login},
-        PASSWORD: ${password},
-        RP_PASSWORD: ${repeat_password},
-        EMAIL: ${email}`);*/
 
           fetch(API,
             {

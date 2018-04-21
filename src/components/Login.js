@@ -11,7 +11,10 @@ export default class Login extends React.Component {
     let password = document.querySelectorAll('input[name="password"]')[0].value;
 
     if(login.length > 0 && password.length > 0){
-      /*alert(`LOGIN: ${login}, PASSWORD: ${password}`);*/
+
+      //fix na popsuty serwer
+    /* Cookies.set('logged', data.login);
+      window.location.href = "/";*/
 
        fetch(API,
          {
@@ -26,13 +29,19 @@ export default class Login extends React.Component {
    )
          .then(response => {
            response.json().then(data => {
-             /*if(data.login.length>0){
-              alert('LOGIN OK');
-              Cookies.set('logged', data.id);
+             if(data.err == null){
+               if(data.login.length>0){
+                Cookies.set('logged', data.login);
+                Cookies.set('logged_id', data.id);
+
+                window.location.href = "/";
+               }else{
+                 alert('Check your login and password and try again!');
+               }
              }else{
                alert('Check your login and password and try again!');
-             }*/
-            console.log(data);
+             }
+             //console.log(data);
            });
          });
 

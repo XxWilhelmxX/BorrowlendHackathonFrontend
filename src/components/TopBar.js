@@ -4,15 +4,20 @@ import Cookies from 'js-cookie';
 import {Link} from 'react-router-dom';
 
 class Profile extends Component {
+  logout() {
+    Cookies.set('logged', '');
+    window.location.href = "/";
+  }
+
   render() {
         return (
           <div className="Profile">
             <div className="profile-picture" />
 
-            <h2>Jeff Bridges</h2>
+            <h2>{Cookies.get('logged')}</h2>
 
             <nav>
-              <Link to="/" onClick={this.logout}>Logout</Link>
+              <a href='#' onClick={this.logout}>Logout</a>
             </nav>
           </div>
         );
