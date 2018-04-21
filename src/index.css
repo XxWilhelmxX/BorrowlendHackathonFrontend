@@ -11,3 +11,12 @@ header {padding: 10px;}
 .form-row > label {padding: .5em 1em .5em 0;flex: 1;}
 .form-row > input {flex: 2;}
 .form-row input[type="button"] {width: 100%; padding: 1em; }
+
+.sideList{
+  width: 20%;
+  background-color: blue;
+  font-family: sans-serif;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
