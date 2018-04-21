@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 
 export default class Sidebar extends React.Component{
     constructor(props) {
@@ -8,7 +8,7 @@ export default class Sidebar extends React.Component{
             toDisplay :[{
                 name: 'home',
                 displayText: 'Home',
-                command: 'bone',
+                command: '',
             },
             {
                 name: 'friends',
@@ -42,7 +42,7 @@ export default class Sidebar extends React.Component{
         return (
           <ul className='sideList'>
             {this.state.toDisplay.map((listValue) => {
-              return <li onClick={() => this.updateView(listValue.command)}>{listValue.displayText}</li>;
+              return <li><Link to={listValue.command}>{listValue.displayText}</Link></li>;
             })}
           </ul>
         )

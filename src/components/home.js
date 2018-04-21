@@ -3,7 +3,7 @@ import React from 'react';
 const API ='https://jsonplaceholder.typicode.com/posts/';
 const QUERY = '1';
 
-export default class Sidebar extends React.Component{
+export default class Home extends React.Component{
 
     constructor(props) {
         super(props);
