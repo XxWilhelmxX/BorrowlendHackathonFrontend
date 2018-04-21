@@ -12,6 +12,7 @@ import Manage from './manage';
 import Login from './Login';
 import Register from './Register';
 import Cookies from 'js-cookie'
+import Borrow from './borrow'
 
 class App extends Component {
     constructor() {
@@ -33,6 +34,7 @@ class App extends Component {
                         <Route exact path="/" component={Home} />
                         <Route exact path="/mangle" component={Manage} />
                         <Route path="/register" component={Register} />
+                        <Route path="/borrow" component={Borrow} />
                     </div>
                 </div> :
                 <Switch>

@@ -23,7 +23,7 @@ export default class Sidebar extends React.Component{
             {
                 name: 'borrow',
                 displayText: 'Borrow/Lend',
-                command: 'burrow'
+                command: 'borrow'
             },
             {
                 name: 'split',
