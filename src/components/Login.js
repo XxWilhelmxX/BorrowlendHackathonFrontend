@@ -2,14 +2,38 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../index.css';
 
+const API ='http://c9b1a451.ngrok.io/server/user/login';
+
 export default class Login extends React.Component {
   login() {
     let login = document.querySelectorAll('input[name="login"]')[0].value;
     let password = document.querySelectorAll('input[name="password"]')[0].value;
 
     if(login.length > 0 && password.length > 0){
-      alert(`LOGIN: ${login}, PASSWORD: ${password}`);
-      //send request to check if user exists
+      /*alert(`LOGIN: ${login}, PASSWORD: ${password}`);*/
+
+       fetch(API,
+         {
+             method: 'POST',
+             dataType: 'json',
+             headers: {
+                 Accept: 'application/json',
+                 'Content-Type': 'application/json',
+             },
+             body: JSON.stringify({login: login, password: password})
+         }
+   )
+         .then(response => {
+           response.json().then(data => {
+             if(data.login.length>0){
+               alert('LOGIN OK');
+
+               //
+             }else{
+               alert('Check your login and password and try again!');
+             }
+           });
+         });
 
     }else{
       alert('Please fill all fields!');

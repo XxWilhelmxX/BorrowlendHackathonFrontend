@@ -15,21 +15,32 @@ export default class Register extends React.Component {
 
     if(name.length > 0 && surname.length > 0 && login.length > 0
       && password.length > 0 && repeat_password.length > 0 && email.length > 0){
-      alert(`NAME: ${name},
+        /*alert(`NAME: ${name},
         SURNAME: ${surname},
         LOGIN: ${login},
         PASSWORD: ${password},
         RP_PASSWORD: ${repeat_password},
-        EMAIL: ${email}`);
+        EMAIL: ${email}`);*/
 
-     let header = new Headers({
-          'Access-Control-Allow-Origin':'*',
-          'Content-Type': 'multipart/form-data'
-      });
-
-        fetch(API + `?login=${login}&&password=${password}&&email=${email}&&name=${name}&&surname=${surname}`, {method: 'POST', header: header})
+          fetch(API,
+            {
+                method: 'POST',
+                dataType: 'json',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({login: login, password: password, email: email, name: name, surname: surname})
+            }
+      )
             .then(response => {
-              console.log(response)
+              response.json().then(data => {
+                if(!data.err){
+                  alert('Registration completed succesfully!');
+                }else{
+                  alert('There was an error with register! Try again later!');
+                }
+              });
             });
 
     }else{
