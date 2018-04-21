@@ -11,12 +11,14 @@ import Home from './home';
 import Manage from './manage';
 import Login from './Login';
 import Register from './Register';
+import Cookies from 'js-cookie'
 
 class App extends Component {
     constructor() {
         super();
+        console.log('App', Cookies.get('logged'));
         this.state = {
-            isLogged: true
+            isLogged: Cookies.get('logged') ? true : false
         }
     }
 
