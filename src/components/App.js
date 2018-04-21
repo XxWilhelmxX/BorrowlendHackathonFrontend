@@ -8,6 +8,7 @@ import {
 import TopBar from './TopBar';
 import Sidebar from './sidebar';
 import Home from './home';
+import Manage from './manage';
 import Login from './Login';
 import Register from './Register';
 
@@ -28,6 +29,7 @@ class App extends Component {
                     <div className="main">
                         <Sidebar />
                         <Route exact path="/" component={Home} />
+                        <Route exact path="/mangle" component={Manage} />
                         <Route path="/register" component={Register} />
                     </div>
                 </div> :
