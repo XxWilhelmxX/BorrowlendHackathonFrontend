@@ -1,4 +1,5 @@
-body {margin: 0;padding: 0;font-family: sans-serif;}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {margin: 0;padding: 0;font-family: 'Open Sans', sans-serif;}
 header {padding: 10px;}
 
 .loginForm label, input[type="button"] {font-size: 1.05em;}
@@ -13,10 +14,27 @@ header {padding: 10px;}
 .form-row input[type="button"] {width: 100%; padding: 1em; }
 
 .sideList{
-  width: 20%;
-  background-color: blue;
+  width: 250px;
+  height: calc(100vh - 80px);
+  background-color: grey;
   font-family: sans-serif;
+  text-align: center;
   list-style-type: none;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sideList li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 15px 25px;
+}
+
+.main {
+  padding-left: 250px;
+  position: absolute;
 }
